@@ -10,9 +10,30 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap.min
  *= require_tree .
  *= require_self
  */
 
+.full_width_div {
+	width   : 100%;
+	left    : 0;
+}
 
+.footer_bar {
+	height          : 200px;
+}
 
+.side_bar {
+	height     : 400px
+}
+
+.full_page {
+	color            : white;
+	background-color : black;
+}
+
+.fill {
+	height     : 100%;
+	min-height : 100%;
+}

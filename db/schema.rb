@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161225025126) do
+ActiveRecord::Schema.define(version: 20161225041725) do
 
   create_table "panels", force: :cascade do |t|
     t.integer  "room_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20161225025126) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "link"
   end
 
 end

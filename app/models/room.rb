@@ -10,10 +10,11 @@ class Room < ActiveRecord::Base
 
 	def get_next(time)
 		Panel.where(room_id: self.id).order(start_unix: :asc).each do |p|
-			if p.start_unix < time.to_i
-				return p
-			end
+			return p if p.start_unix < time.to_i
 		end
+		# Need to do a special case check for first panel
+		p = Panel.where(room_id: self.id).order(start_unix: :asc).first
+		return p if p.start_unix > time.to_i
 		return nil
 	end
 

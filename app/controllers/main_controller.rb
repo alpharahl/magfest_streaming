@@ -17,5 +17,8 @@ class MainController < ApplicationController
             :lan_2     => Room.find_by_name("LAN 2"),
             :gof       => Room.find_by_name("Games on Film")
 		}
+        
+        room_name = params[:room].gsub(/_/, ' ') if params[:room]
+		@disp_room = Room.find_by_name(room_name || "Panels 3")
 	end
 end

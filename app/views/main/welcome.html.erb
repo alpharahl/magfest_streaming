@@ -18,7 +18,7 @@ WowzaPlayer.create('playerElement',
 );
 </script>
 <%#"sourceURL":"http://warehouse.magfest.net:1935/testLoopStream/asdf/playlist.m3u8",%>
-
+<% time = Time.local(2017,"jan",6,16,45,0) %>
 <div class="container, full_width_div">
   <div class="row">
     <div class="col-sm-9">
@@ -29,25 +29,35 @@ WowzaPlayer.create('playerElement',
       <div class="carousel-inner" role="listbox">
         <div class="item active">
           <h1>Panels</h1>
+          
           <h3>Panels 1</h3>
-          Panels 1 event
+          <%= @rooms[:panels_1].display_current(time) %>
           <h3>Panels 2</h3>
-          Panels 2 event
+          <%= @rooms[:panels_2].display_current(time) %>
+          <h3>Panels 3</h3>
+          <%= @rooms[:panels_3].display_current(time) %>
           <h3>Panels 4</h3>
-          Panels 4 event
+          <%= @rooms[:panels_4].display_current(time) %>
         </div>
         <div class="item">
-          <h1>Concerts</h1>
+          <h1>Panels Cont.</h1>
+          <h3>MAGES 1</h3>
+          <%= @rooms[:mages_1].display_current(time) %>
+          <h3>MAGES 2</h3>
+          <%= @rooms[:mages_2].display_current(time) %>
+          <h3>MAGES Forum</h3>
+          <%= @rooms[:forum].display_current(time) %>
+          <h3>Arena</h3>
+          <%= @rooms[:arena].display_current(time) %>
+        </div>
+        <div class="item">
+          <h1>Main Stage</h1>
           <h3>Current</h3>
-          Band Name
-          <h3>Up Next</h3>
-          Band Name
-        </div>
-        <div class="item">
-          <h1>Other</h1>
-          <h3>Lan Events</h3>
-          <h3>Megamanathon</h3>
-          <h3>Tournaments</h3>
+          <%= @rooms[:concerts].display_current(time) %>
+          <h1>Mega Man-athon 5</h1>
+          <%= @rooms[:megaman].display_current(time) %>
+          <h1>Chipspace</h1>
+          <%= @rooms[:chipspace].display_current(time) %>
         </div>
       </div>
     </div>
@@ -55,7 +65,18 @@ WowzaPlayer.create('playerElement',
 </div>
 
 <div class="container text-center full_width_div footer_bar">
-  Some random stuff about magfest
+<br> <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <%= image_tag("m017logo.png") %>
+    </div>
+    <div class="col-sm-6">
+      Some random stuff about magfest
+    </div>
+    <div class="col-sm-2">
+      <div id="clock"></div>
+    </div>
+  </div>
 </div>
 
 

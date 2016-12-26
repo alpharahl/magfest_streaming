@@ -21,7 +21,11 @@
 }
 
 .footer_bar {
-	height          : 200px;
+	height           : 275px;
+	bottom           : 0;
+	vertical-align   : center;
+	position         : absolute;
+	background-color : rgb(26,26,26);
 }
 
 .side_bar {

@@ -5,7 +5,7 @@ WowzaPlayer.create('playerElement',
     "license":"PLAY1-bF3WZ-Nketh-PRktw-TFbnB-8hXQ3",
     "title":"",
     "description":"",
-    "sourceURL": <%= @disp_room.link %>,
+    "sourceURL":"<%= @disp_room.link %>",
     "autoPlay":<%= params[:autoplay] || false%>,
     "volume":"75",
     "mute":false,
@@ -17,7 +17,7 @@ WowzaPlayer.create('playerElement',
 );
 </script>
 <%#"sourceURL":"http://warehouse.magfest.net:1935/testLoopStream/asdf/playlist.m3u8",%>
-<% time = Time.now %> <%#Time.local(2017,"jan",6,16,45,0) %>
+<% time = Time.local(2017,"jan",6,16,45,0) %>
 <div class="container, full_width_div">
   <div class="row">
     <div class="col-sm-9">
@@ -29,9 +29,9 @@ WowzaPlayer.create('playerElement',
         <div class="item active">
           <h1>Panels</h1>
           
-          <h3>Panels 1</h3>
+          <a href="<%= request.base_url %>/?room=Panels_1&autoplay=true"><h3>Panels 1</h3></a>
           <%= @rooms[:panels_1].display_current(time) %>
-          <h3>Panels 2</h3>
+          <a href="<%= request.base_url %>/?room=Panels_2&autoplay=true"><h3>Panels 2</h3></a>
           <%= @rooms[:panels_2].display_current(time) %>
           <h3>Panels 3</h3>
           <%= @rooms[:panels_3].display_current(time) %>
@@ -50,10 +50,9 @@ WowzaPlayer.create('playerElement',
           <%= @rooms[:arena].display_current(time) %>
         </div>
         <div class="item">
-          <h1>Main Stage</h1>
-          <h3>Current</h3>
+          <a href="<%= request.base_url %>/?room=Concerts&autoplay=true"><h1>Main Stage</h1></a>
           <%= @rooms[:concerts].display_current(time) %>
-          <h1>Mega Man-athon 5</h1>
+          <a href="<%= request.base_url %>/?room=Mega_Man-athon_5&autoplay=true"><h1>Mega Man-athon 5</h1></a>
           <%= @rooms[:megaman].display_current(time) %>
           <h1>Chipspace</h1>
           <%= @rooms[:chipspace].display_current(time) %>
@@ -63,6 +62,7 @@ WowzaPlayer.create('playerElement',
   </div>
 </div>
 
+<br><br>
 <div class="container text-center full_width_div footer_bar">
   <div class="row">
     <div class="col-sm-4">

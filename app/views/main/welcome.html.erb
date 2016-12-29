@@ -64,17 +64,15 @@ WowzaPlayer.create('playerElement',
 <br><br>
 <div class="container text-center full_width_div footer_bar">
   <div class="row">
-    <div class="col-sm-4">
-      <%= image_tag("m2017logo.png") %>
-    </div>
-    <div class="col-sm-7">
+    <div class="col-sm-9">
       <% unless @disp_room == nil  %>
         <h3><%= @disp_room.get_next(time).name %></h3>
         <p><%= @disp_room.get_next(time).description %></p>
       <% end %>
     </div>
-    <div class="col-sm-1">
-      <div id="clock" style="padding-top:150px"></div>
+    <div class="col-sm-2">
+      <div id="clock" class="clock"></div>
+      <%= image_tag("m2017logo.png") %>
     </div>
   </div>
 </div>

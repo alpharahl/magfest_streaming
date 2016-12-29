@@ -21,7 +21,7 @@
 }
 
 .footer_bar {
-	height           : 200px;
+	height           : 180px;
 	bottom           : 0;
 	vertical-align   : center;
 	position         : absolute;
@@ -30,12 +30,16 @@
 
 .side_bar {
 	position         : absolute;
-	height           : 880px;
+	height           : 900px;
 	width            : 320px;
 	font-size        : 20px;
 	right            : 0;
 	background-color : rgb(26,26,26);
+}
 
+.clock {
+	position         : absolute;
+	padding-left     : 250px;
 }
 
 .full_page {

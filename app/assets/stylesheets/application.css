@@ -23,6 +23,7 @@
 .footer_bar {
 	height           : 185px;
 	bottom           : 0;
+	font-size        : 25px;
 	vertical-align   : center;
 	position         : absolute;
 	background-color : rgb(26,26,26);
@@ -32,7 +33,7 @@
 	position         : absolute;
 	height           : 895px;
 	width            : 320px;
-	font-size        : 20px;
+	font-size        : 25px;
 	right            : 0;
 	background-color : rgb(26,26,26);
 }
@@ -50,5 +51,9 @@
 .fill {
 	height     : 100%;
 	min-height : 100%;
+}
+
+#logo {
+	text-align: right;
 }
 

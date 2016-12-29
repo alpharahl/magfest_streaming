@@ -32,4 +32,9 @@ class Room < ActiveRecord::Base
 	    	end
 	    end
 	end
+
+	def display_name(url)
+		return self.name unless self.link.size > 0
+		return "<a href=\"#{url}/?room=Panels_1&autoplay=true\">#{self.name}</a>".html_safe
+	end
 end

@@ -21,7 +21,7 @@
 }
 
 .footer_bar {
-	height           : 275px;
+	height           : 200px;
 	bottom           : 0;
 	vertical-align   : center;
 	position         : absolute;
@@ -29,7 +29,8 @@
 }
 
 .side_bar {
-	height     : 400px
+	height     : 400px;
+	font-size  : 20px;
 }
 
 .full_page {

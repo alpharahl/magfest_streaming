@@ -28,7 +28,7 @@ WowzaPlayer.create('playerElement',
       <div class="carousel-inner side_bar text-center" role="listbox">
         <div class="item active">
           <h1>Panels</h1>
-          <h3><%= @rooms[:panels_1].display_name(request.base_url) %></h3>
+          <h3><%# @rooms[:panels_1].display_name(request.base_url) %></h3>
           <%= @rooms[:panels_1].display_current(time) %>
           <a href="<%= request.base_url %>/?room=Panels_2&autoplay=true"><h3>Panels 2</h3></a>
           <%= @rooms[:panels_2].display_current(time) %>

@@ -16,7 +16,7 @@
  */
 
 .full_width_div {
-	width   : 99%;
+	width   : 100%;
 	left    : 0;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .fill {
-	height     : 99%;
-	min-height : 99%;
+	height     : 100%;
+	min-height : 100%;
 }
 

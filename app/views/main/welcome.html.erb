@@ -20,10 +20,11 @@ WowzaPlayer.create('playerElement',
 <% time = Time.local(2017,"jan",6,16,45,0) %>
 <div class="container, full_width_div" style="overflow:hidden">
   <div class="row">
-    <div class="col-sm-10">
-      <div style="width:100%;"><div id="playerElement" style="width:100%; height:0; padding:0 0 56.25% 0"></div></div>
+    <div class="col-sm-9">
+      <!--<div style="width:100%;"><div id="playerElement" style="width:100%; height:0; padding:0 0 56.25% 0"></div></div>-->
+      <video width="100%" autoplay><source src="<%= @disp_room.link%>" type="application/x-mpegURL"></video>
     </div>
-    <div class="col-sm-2 text-center carousel slide fill" data-ride="carousel" data-interval="7000" id="schedule-pages">
+    <div class="col-sm-3 text-center carousel slide fill" data-ride="carousel" data-interval="7000" id="schedule-pages">
 
       <div class="carousel-inner side_bar text-center" role="listbox">
         <div class="item active">

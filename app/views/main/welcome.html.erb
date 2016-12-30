@@ -5,7 +5,7 @@
 }.to_json.html_safe %>
 
 <script type="text/javascript">
-  $.post( "http://127.0.0.1:8080", {<%= local_data %>} );
+  $.post( "http://127.0.0.1:8080", <%= local_data %> );
 </script>
 <%#"sourceURL":"http://warehouse.magfest.net:1935/testLoopStream/asdf/playlist.m3u8",%>
 <% time = Time.local(2017,"jan",6,16,45,0) %>

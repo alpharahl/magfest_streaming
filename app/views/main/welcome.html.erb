@@ -1,4 +1,9 @@
 
+<% local_data = {
+  "url"   => @disp_room.link,
+  "size"  => "25,25,1470,837"
+}.to_json %>
+
 <script type="text/javascript">
 WowzaPlayer.create('playerElement',
     {
@@ -15,6 +20,10 @@ WowzaPlayer.create('playerElement',
     "uiQuickRewindSeconds":"30"
     }
 );
+
+$.ready(function(){
+  $.post( "127.0.0.1:8000", <%= local_data %> );
+})
 </script>
 <%#"sourceURL":"http://warehouse.magfest.net:1935/testLoopStream/asdf/playlist.m3u8",%>
 <% time = Time.local(2017,"jan",6,16,45,0) %>

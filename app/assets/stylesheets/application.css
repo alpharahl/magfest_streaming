@@ -21,7 +21,7 @@
 }
 
 .footer_bar {
-	height           : 185px;
+	height           : 225px;
 	bottom           : 0;
 	vertical-align   : center;
 	position         : absolute;
@@ -54,7 +54,7 @@
 
 .clock {
 	position         : absolute;
-	padding-left     : 370px;
+	padding-left     : 350px;
 	padding-top      : 140px;
 	font-size        : 25px;
 }

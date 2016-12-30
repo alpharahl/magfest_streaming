@@ -26,7 +26,7 @@
       <div class="carousel-inner text-left" role="listbox">
         <div class="item active">
           <h1 class="text-center">Panels</h1>
-          <h3>Panels 1<%# @rooms[:panels_1].display_name(request.base_url) %></h3>
+          <a href="<%= request.base_url%>/?room=Panels_1"<h3>Panels 1<%# @rooms[:panels_1].display_name(request.base_url) %></h3></a>
           <div id="caro_item"><%= @rooms[:panels_1].display_current(time) %></div>
           <a href="<%= request.base_url %>/?room=Panels_2&autoplay=true"><h3>Panels 2</h3></a>
           <div id="caro_item"><%= @rooms[:panels_2].display_current(time) %></div>

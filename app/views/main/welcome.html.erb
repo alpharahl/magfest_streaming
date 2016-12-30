@@ -5,7 +5,7 @@
 }.to_json.html_safe %>
 
 <script type="text/javascript">
-  $.post( "http://127.0.0.1:8080", "<%= local_data %>" );
+  $.post( "http://127.0.0.1:8080", JSON_string:<%= local_data %> );
 </script>
 <%#"sourceURL":"http://warehouse.magfest.net:1935/testLoopStream/asdf/playlist.m3u8",%>
 <% time = Time.local(2017,"jan",6,16,45,0) %>
@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-sm-9">
       <!--<div style="width:100%;"><div id="playerElement" style="width:100%; height:0; padding:0 0 56.25% 0"></div></div>-->
-      <div class="container" id=video_location>Something truly terrible has happened ... Techops should fix it.</div>
+      <div class="container" id=video_location>Something truly terrible has happened ... Techops should fix it.<br><%= local_data %></div>
     </div>
     <div class="col-sm-2 text-center carousel slide fill side_bar" data-ride="carousel" data-interval="7000" id="schedule-pages">
 

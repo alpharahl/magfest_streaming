@@ -2,7 +2,7 @@
 <% local_data = {
   "url"   => @disp_room.link,
   "size"  => "25,25,1470,837"
-}.to_json %>
+}.to_json.html_safe %>
 
 <script type="text/javascript">
 WowzaPlayer.create('playerElement',

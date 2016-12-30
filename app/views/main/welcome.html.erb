@@ -5,7 +5,7 @@
 }.to_json.html_safe %>
 
 <script type="text/javascript">
-WowzaPlayer.create('playerElement',
+/*WowzaPlayer.create('playerElement',
     {
     "license":"PLAY1-bF3WZ-Nketh-PRktw-TFbnB-8hXQ3",
     "title":"",
@@ -19,7 +19,7 @@ WowzaPlayer.create('playerElement',
     "uiShowQuickRewind":true,
     "uiQuickRewindSeconds":"30"
     }
-);
+);*/
 
 $.ready(function(){
   $.post( "127.0.0.1:8000", <%= local_data %> );

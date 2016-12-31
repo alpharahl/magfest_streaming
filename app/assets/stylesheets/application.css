@@ -104,13 +104,13 @@
 }
 
 h1 {
-	color        : rgb(255, 26, 26);
+	color        : rgb(255, 155, 26);
 	font-size    : 100px;
 	padding-left : 0px;
 }
 
 h3 {
-	color           : rgb(26, 155, 255);
+	color           : rgb(75, 75, 255);
 	width           : 100%;
 	font-size       : 225%;
 	text-decoration : none;

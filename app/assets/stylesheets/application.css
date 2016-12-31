@@ -89,6 +89,10 @@
 	font-size : 60px;
 }
 
+#room_name {
+	color : rgb(255,26,26);
+}
+
 .full_page {
 	color            : white;
 	background-color : rgb(26,26,26);

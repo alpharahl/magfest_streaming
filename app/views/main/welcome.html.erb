@@ -71,7 +71,7 @@
   <div class="row">
     <div class="col-sm-9" id="stream_info">
       <% unless @disp_room == nil  %>
-        <h3><%= @disp_room.get_next(time).name %></h3>
+        <h3><span id="room_name"><%= "#{@disp_room.name}"%></span><%= @disp_room.get_next(time).name %></h3>
         <p><%= @disp_room.get_next(time).description %></p>
       <% end %>
     </div>

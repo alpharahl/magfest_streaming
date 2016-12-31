@@ -2,6 +2,7 @@ class DataPopulater
     require 'open-uri'
     require 'json'
 	def self.populate_panels
+        Panel.delete_all
 		@panels_data = get_json_of_panels
 		@rooms = {}
 		names = []

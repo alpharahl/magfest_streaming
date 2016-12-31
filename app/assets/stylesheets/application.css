@@ -75,10 +75,11 @@
 }
 
 #stream_info{
-	font-size      :  20px;
+	font-size      : 24px;
 	padding-left   : 20px;
 	padding-right  : 20px;
 	padding-bottom : 10px;
+	margin-top     : -25px;
 }
 
 .full_page {

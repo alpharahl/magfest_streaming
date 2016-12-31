@@ -12,6 +12,11 @@
     dataType: 'json',
     data: '<%= local_data %>'
   })
+
+  setTimeout("refreshPage();", 10000);
+  function refreshPage(){
+    window.location = location.href;
+  }
 </script>
 <%#"sourceURL":"http://warehouse.magfest.net:1935/testLoopStream/asdf/playlist.m3u8",%>
 <% time = Time.local(2017,"jan",6,16,45,0) %>

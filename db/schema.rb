@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161225041725) do
+ActiveRecord::Schema.define(version: 20161230235726) do
 
   create_table "panels", force: :cascade do |t|
     t.integer  "room_id"
@@ -30,6 +30,11 @@ ActiveRecord::Schema.define(version: 20161225041725) do
   end
 
   add_index "panels", ["room_id"], name: "index_panels_on_room_id"
+
+  create_table "pis", force: :cascade do |t|
+    t.string  "link"
+    t.integer "room_id"
+  end
 
   create_table "rooms", force: :cascade do |t|
     t.string   "name"

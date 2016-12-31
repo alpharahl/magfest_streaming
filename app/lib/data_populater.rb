@@ -38,7 +38,10 @@ class DataPopulater
         	Rails.logger.info p_obj.inspect
         	#p_obj.save
         end
+        self.populate_panels
 	end
+
+    handle_asynchronously :populate_panels, :run_at => Proc.new { 5.minutes.from_now }
 
     def self.get_json_of_panels
         JSON.parse(open("https://super2017.uber.magfest.org/uber/schedule/panels_json").read)

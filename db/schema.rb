@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161231020241) do
+ActiveRecord::Schema.define(version: 20161231035902) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20161231020241) do
   create_table "pis", force: :cascade do |t|
     t.string  "link"
     t.integer "room_id"
+    t.string  "location"
   end
 
   create_table "rooms", force: :cascade do |t|

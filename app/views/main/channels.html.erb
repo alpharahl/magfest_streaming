@@ -1,0 +1,40 @@
+
+<script>
+
+function triggerChange(button)
+{
+    $.ajax({
+        type: "GET",
+        url:  'change_channel/?id=' + button,
+        success: function(response){
+        	location.reload();
+        }
+	})
+}
+
+</script>
+
+<div class="container">
+  <% @pis.each do |pi| %>
+    <div class="row">
+      <div class="col-sm-2 text-right" style="padding-top:5px">
+        <%= "#{pi.location}:" %>
+      </div>
+      <div class="col-sm-2 text-left" style="padding-top:5px">
+        <%= "Current: #{Room.find(pi.room_id).name}" %>
+      </div>
+      <div class="col-sm-8">
+        <% @rooms.each do |r| %>
+          <% btn_name = "#{pi.id}-#{r.name}" %>
+          <button type="button" class="btn btn-primary" id="<%= btn_name %>" onClick="triggerChange('<%= btn_name %>')"><%= r.name %>
+          	
+          </button>
+        <% end %>
+      </div>
+    </div>
+    <br>
+  <% end %>
+</div>
+
+
+<div id="clock"></div>

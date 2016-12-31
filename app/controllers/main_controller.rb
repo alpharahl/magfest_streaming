@@ -22,4 +22,22 @@ class MainController < ApplicationController
 
 		@disp_room = Room.where(id: pi.room_id).first
 	end
+
+      def channels
+            @pis = Pi.all
+            @rooms = []
+            Room.where.not(link: nil).each do |room|
+                  @rooms << room
+            end
+      end
+
+      def change_channel
+            pi_num = params[:id][0..params[:id].index('-')-1].to_i
+            p = Pi.find(pi_num)
+            room = params[:id][params[:id].index('-')+1 .. -1]
+            r = Room.find_by_name(room)
+            p.room_id = r.id
+            p.save!
+            redirect_to "/channels"
+      end
 end

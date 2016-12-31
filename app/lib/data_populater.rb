@@ -41,7 +41,7 @@ class DataPopulater
         end
         populate_panels
 	  end
-      handle_asynchronously :populate_panels, :run_at => Proc.new { 5.minutes.from_now }
+      handle_asynchronously :populate_panels, :run_at => Proc.new { 30.minutes.from_now }
     end
 
 

@@ -28,7 +28,7 @@ class Room < ActiveRecord::Base
 	    	if next_panel == nil
 	    		return "Finished"
 	    	else
-	    		return "#{next_panel.name} <br> #{panel.start[0..panel.start.index(" ")]} - #{panel.end[0..panel.end.index(" ")]}".html_safe
+	    		return "#{next_panel.name} <br> #{next_panel.start[0..next_panel.start.index(" ")]} - #{next_panel.end[0..next_panel.end.index(" ")]}".html_safe
 	    	end
 	    end
 	end

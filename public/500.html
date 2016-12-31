@@ -56,11 +56,15 @@
 
 <body>
   <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+  Things are broken, retrying ...
+  <script>
+    $('error').ready(function(){
+      setTimeout(function(){
+        location.reload();}, 10000)
+      })
+    };
+  </script>
+
+  <div id="error">Things are broken, retrying ...</div>
 </body>
 </html>

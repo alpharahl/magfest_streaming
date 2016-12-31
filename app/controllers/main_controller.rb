@@ -18,9 +18,12 @@ class MainController < ApplicationController
             :gof       => Room.find_by_name("Games on Film")
 		}
 
-            pi = Pi.where(id: params[:pi_id]).first
-
-		@disp_room = Room.where(id: pi.room_id).first
+            if params[:pi_id]
+                  pi = Pi.where(id: params[:pi_id]).first
+                  @disp_room = Room.where(id: pi.room_id).first
+            else
+                  @disp_room = Room.where(name: "Panels 1").first
+            end
 	end
 
       def channels

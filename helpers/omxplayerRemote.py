@@ -13,7 +13,6 @@ class GetHandler(BaseHTTPRequestHandler):
             'Local omxplayer control',
             'Post to this endpoint with a json object containing a key for url and size',
             'Very alpha, but it functions',
-            '',
             ])
         self.send_response(200)
         self.send_header("Access-Control-Allow-Origin:","*")
@@ -39,12 +38,22 @@ class GetHandler(BaseHTTPRequestHandler):
 
         PROCNAME = "omxplayer.bin"
 
+	isRunning = False
+	shouldLaunch = False
+
         for proc in psutil.process_iter():
             # check whether the process name matches
             if proc.name() == PROCNAME:
-                proc.kill()
+		isRunning = True
+		# If the URL isn't in the list of args, kill it so we can load a new one
+		if url not in proc.cmdline():
+	                proc.kill()
+			shouldLaunch = True
 
-        subprocess.Popen(["/usr/bin/omxplayer", "--timeout", "10", "--win",  size, url])
+
+	if shouldLaunch or not isRunning:
+		subprocess.Popen(["/usr/bin/omxplayer", "--timeout", "30", "--win",  size, url])
+
 
         return
 

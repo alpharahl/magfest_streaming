@@ -79,9 +79,10 @@
 	padding-right  : 20px;
 	padding-bottom : 10px;
 	margin-top     : -25px;
-	.p {
-		font-size  : 24px;
-	}
+}
+
+#stream_info p {
+	font-size : 24px;
 }
 
 .full_page {

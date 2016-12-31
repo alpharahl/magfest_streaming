@@ -82,7 +82,8 @@
 }
 
 #stream_info p {
-	font-size : 26px;
+	font-size     : 26px;
+	text-overflow : ellipsis;
 }
 
 #stream_info h3 {
@@ -104,9 +105,10 @@
 }
 
 h1 {
-	color        : rgb(255, 155, 26);
-	font-size    : 100px;
-	padding-left : 0px;
+	color         : rgb(255, 155, 26);
+	font-size     : 100px;
+	padding-left  : 0px;
+	text-overflow : ellipsis;
 }
 
 h3 {
@@ -115,6 +117,7 @@ h3 {
 	font-size       : 225%;
 	text-decoration : none;
 	white-space     : nowrap;
+	text-overflow   : ellipsis;
 }
 
 #caro_item {

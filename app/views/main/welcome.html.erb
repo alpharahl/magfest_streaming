@@ -30,7 +30,7 @@
     <div class="col-sm-2 text-center carousel slide fill side_bar" data-ride="carousel" data-interval="7000" id="schedule-pages">
 
       <div class="carousel-inner text-left" role="listbox">
-        <div class="item active">
+        <div class="item active hfill">
           <h1 class="text-center">Panels</h1>
           <a href="<%= request.base_url%>/?room=Panels_1"><h3>Panels 1<%# @rooms[:panels_1].display_name(request.base_url) %></h3></a>
           <div id="caro_item"><%= @rooms[:panels_1].display_current(time) %></div>
@@ -41,7 +41,7 @@
           <h3>Panels 4<%# @rooms[:panels_4].display_name(request.base_url) %></h3>
           <div id="caro_item"><%= @rooms[:panels_4].display_current(time) %></div>
         </div>
-        <div class="item">
+        <div class="item hfill">
           <h1 class="text-center">Panels</h1>
           <h3>MAGES 1</h3>
           <div id="caro_item"><%= @rooms[:mages_1].display_current(time) %></div>
@@ -52,7 +52,7 @@
           <h3>Arena</h3>
           <div id="caro_item"><%= @rooms[:arena].display_current(time) %></div>
         </div>
-        <div class="item">
+        <div class="item hfill">
           <h1 class="text-center">Music</h1>
           <a href="<%= request.base_url %>/?room=Concerts&autoplay=true"><h3>Main Stage</h3></a>
           <div id="caro_item"><%= @rooms[:concerts].display_current(time) %></div>

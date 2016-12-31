@@ -1,14 +1,15 @@
 class DataPopulater
     require 'open-uri'
     require 'json'
-	def self.populate_panels
-        Panel.delete_all
-		@panels_data = get_json_of_panels
-		@rooms = {}
-		names = []
+    class << self
+	  def populate_panels
+          Panel.delete_all
+	      @panels_data = get_json_of_panels
+		  @rooms = {}
+		  names = []
 
-		# First pass we need to build the name array
-		@panels_data.each do |panel|
+		  # First pass we need to build the name array
+		  @panels_data.each do |panel|
 			end_of_room = panel["location"].size - 1
 			end_of_room = panel["location"].index("(")-1 if panel["location"].include?('(')
 			panel["location"] = panel["location"][0..end_of_room].strip
@@ -38,10 +39,11 @@ class DataPopulater
         	Rails.logger.info p_obj.inspect
         	#p_obj.save
         end
-        self.populate_panels
-	end
+        populate_panels
+	  end
+      handle_asynchronously :populate_panels, :run_at => Proc.new { 5.minutes.from_now }
+    end
 
-    handle_asynchronously :populate_panels, :run_at => Proc.new { 5.minutes.from_now }
 
     def self.get_json_of_panels
         JSON.parse(open("https://super2017.uber.magfest.org/uber/schedule/panels_json").read)

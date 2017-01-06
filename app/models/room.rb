@@ -1,7 +1,7 @@
 class Room < ActiveRecord::Base
 	def get_current(time)
 	    Panel.where(room_id: self.id).each do |p|
-	        if p.start_unix < time.to_i and p.end_unix > time.to_i
+	        if p.start_unix < (time).to_i and p.end_unix > (time).to_i
 	        	return p
 	        end
 	    end
@@ -9,12 +9,13 @@ class Room < ActiveRecord::Base
 	end
 
 	def get_next(time)
-		Panel.where(room_id: self.id).order(start_unix: :asc).each do |p|
-			return p if p.start_unix < time.to_i
+		Panel.where(room_id: self.id).order(start_unix: :desc).each do |p|
+			return p if p.start_unix < (time).to_i
 		end
 		# Need to do a special case check for first panel
-		p = Panel.where(room_id: self.id).order(start_unix: :asc).first
-		return p if p.start_unix > time.to_i
+                Panel.where(room_id: self.id).order(start_unix: :asc).each do |p|
+                  return p if p.start_unix >= (time).to_i
+                end
 		return nil
 	end
 
@@ -22,13 +23,17 @@ class Room < ActiveRecord::Base
 	def display_current(time)
 	    panel = get_current(time)
 	    if panel
-	        return "#{panel.name} <br>   #{panel.start[0..panel.start.index(" ")]} - #{panel.end[0..panel.end.index(" ")]}".html_safe	
+                start_time = DateTime.strptime((panel.start_unix - 5.hours.to_i).to_s, "%s")
+                end_time   = DateTime.strptime((panel.end_unix - 5.hours.to_i).to_s, "%s")
+	        return "#{panel.name} <br>  #{start_time.strftime("%a %I:%M %p")} - #{end_time.strftime("%I:%M %p")}".html_safe	
 	    else
 	    	next_panel = get_next(time)
+                start_time = DateTime.strptime((next_panel.start_unix - 5.hours.to_i).to_s, "%s")
+                end_time   = DateTime.strptime((next_panel.end_unix - 5.hours.to_i).to_s, "%s")
 	    	if next_panel == nil
 	    		return "Finished"
 	    	else
-	    		return "#{next_panel.name} <br> #{next_panel.start[0..next_panel.start.index(" ")]} - #{next_panel.end[0..next_panel.end.index(" ")]}".html_safe
+	    		return "#{next_panel.name} <br> #{start_time.strftime("%a %I:%M %p")} - #{end_time.strftime("%I:%M %p")}".html_safe
 	    	end
 	    end
 	end

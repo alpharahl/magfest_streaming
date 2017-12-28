@@ -4,7 +4,7 @@
   "size"  => "25,25,1470,837"
 }.to_json.html_safe %>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   //$.post( "http://127.0.0.1:8080", <%= local_data %> );
   $.ajax({
     url: 'http://127.0.0.1:8080',
@@ -17,7 +17,7 @@
   function refreshPage(){
     window.location = location.href;
   }
-</script>
+</script> -->
 <%#"sourceURL":"http://warehouse.magfest.net:1935/testLoopStream/asdf/playlist.m3u8",%>
 <%# time = Time.local(2017,"jan",6,16,45,0) %>
 <% time = Time.now %>
@@ -25,7 +25,12 @@
   <div class="row">
     <div class="col-sm-9">
       <!--<div style="width:100%;"><div id="playerElement" style="width:100%; height:0; padding:0 0 56.25% 0"></div></div>-->
-      <div class="container" id=video_location>Something truly terrible has happened ... Techops should fix it.</div>
+      <!-- <div class="container" id=video_location>Something truly terrible has happened ... Techops should fix it.</div> -->
+      <video src="<%= local_data %>" autoplay poster="posterimage.jpg">
+Sorry, your browser doesn't support embedded videos,
+but don't worry, you can <a href="videofile.webm">download it</a>
+and watch it with your favorite video player!
+</video>
     </div>
     <div class="col-sm-2 text-center carousel slide fill side_bar" data-ride="carousel" data-interval="10000" id="schedule-pages">
 
@@ -81,5 +86,3 @@
     </div>
   </div>
 </div>
-
-

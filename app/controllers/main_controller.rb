@@ -18,8 +18,16 @@ class MainController < ApplicationController
             :gof       => Room.find_by_name("Games on Film")
 		}
 
-            pi = Pi.where(id: params[:pi_id]).first
+    pi = Pi.where(id: params[:pi_id]).first
 
-		@disp_room = Room.where(id: pi.room_id).first
+
+    if pi
+			@disp_room = Room.where(id: pi.room_id).first
+		else
+			@disp_room = @rooms.first
+		end
+	end
+
+	def schedule
 	end
 end

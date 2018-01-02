@@ -3,7 +3,15 @@
   <%= render partial: "header_schedule" %>
 
   <div class="map">
-    <%= image_tag("map_tiny", height: "#{1080-75}px") %>
+    <table class="logo_table">
+      <tr>
+        <td><%= image_tag("qr", size: "150x150") %></td>
+        <td><%= image_tag("m2018logo", height: "150px") %></td>
+      </tr>
+      <tr><td>Scan for Guidebook</td><td></td></tr>
+    </table>
+    <%= image_tag("map_cropped", width: "100%") %>
+    <%= image_tag("logos", width: "50%")%>
   </div>
 
   <div class="schedule">

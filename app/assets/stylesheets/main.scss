@@ -52,11 +52,16 @@
 
 .map{
 	grid-area: map;
-	left: -100px;
+	text-align: center;
+}
+
+.logo_table{
+	width: 100%;
 }
 
 .schedule{
 	grid-area: schedule;
+	padding-left: 10px;
 }
 
 .stream{

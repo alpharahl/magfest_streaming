@@ -29,10 +29,18 @@ function checkTime(i) {
 </script>
 </head>
 <body onload="startTime()">
+  <% if @pi %>
+    <script type="text/javascript">
+      setTimeout("refreshPage();", 60000);
+      function refreshPage(){
+        window.location = location.href;
+      }
+    </script>
+  <% end %>
 
-<div class="full_page">
-  <%= yield %>
-</div>
+  <div class="full_page">
+    <%= yield %>
+  </div>
 
 
 </body>

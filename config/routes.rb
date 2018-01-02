@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   root 'main#welcome'
-  get 'schedule' => 'main#schedule'
+  get 'schedule', to: 'main#schedule'
+  get 'combined', to: 'main#combined'
+  get 'stream', to: 'main#stream'
   resources :rooms
 end

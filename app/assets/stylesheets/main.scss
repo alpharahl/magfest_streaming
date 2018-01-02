@@ -1,3 +1,78 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.wrapper{
+	display: grid;
+	height: 100vh;
+}
+
+.stream-layout{
+	grid-template-rows: 100px 1fr 250px;
+	grid-template-columns: 1fr 400px;
+	grid-template-areas:
+		"stream header"
+		"stream logo"
+		"footer footer"
+}
+
+.combined-layout{
+	grid-template-rows: 100px 1fr 250px;
+	grid-template-columns: 200px 1fr 400px;
+	grid-template-areas:
+	  "stream stream logo"
+		"stream stream carosel"
+		"header footer footer"
+}
+
+.schedule-layout{
+	grid-template-rows: 75px 1fr;
+	grid-template-columns: 1fr 2fr;
+	grid-template-areas:
+	  "header header"
+		"map schedule"
+}
+
+.schedule-table{
+	width: 100%;
+	tr:nth-child(even) {background: rgba(194, 24, 91, 0.6)};
+}
+
+.schedule-table th{
+	font-size: large;
+	border-bottom: 1px solid #fff;
+}
+
+.header{
+  grid-area: header;
+	text-align: center;
+}
+
+.map{
+	grid-area: map;
+	left: -100px;
+}
+
+.schedule{
+	grid-area: schedule;
+}
+
+.stream{
+  grid-area: stream;
+}
+
+.logo{
+  grid-area: logo;
+	text-align: center;
+}
+
+.footer{
+  grid-area: footer;
+	text-align: center;
+}
+
+.carosel{
+	grid-area: carosel;
+}

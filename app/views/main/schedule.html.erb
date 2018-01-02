@@ -1,1 +1,62 @@
-<div class="header">test</div>
+<div class="wrapper schedule-layout">
+
+  <%= render partial: "header_schedule" %>
+
+  <div class="map">
+    <%= image_tag("map_tiny", height: "#{1080-75}px") %>
+  </div>
+
+  <div class="schedule">
+    <h3>National Harbor Level</h3>
+    <table class="schedule-table">
+      <tr>
+        <th></th>
+        <th>Room</th>
+        <th>Event</th>
+        <th>Start</th>
+      </tr>
+      <% @floors[3]["panels"].each do |p| %>
+        <tr>
+          <td><%= image_tag(MainHelper.panel_tag(p.room.name), size: "20x20")%></td>
+          <td><%= p.room.name %></td>
+          <td><%= p.name %></td>
+          <td><%= p.start %></td>
+        </tr>
+      <% end %>
+    </table>
+    <h3>Ballroom Level</h3>
+    <table class="schedule-table">
+      <tr>
+        <th></th>
+        <th>Room</th>
+        <th>Event</th>
+        <th>Start</th>
+      </tr>
+      <% @floors[2]["panels"].each do |p| %>
+        <tr>
+          <td><%= image_tag(MainHelper.panel_tag(p.room.name), size: "20x20")%></td>
+          <td><%= p.room.name %></td>
+          <td><%= p.name %></td>
+          <td><%= p.start %></td>
+        </tr>
+      <% end %>
+    </table>
+    <h3>Atrium Level</h3>
+    <table class="schedule-table">
+      <tr>
+        <th></th>
+        <th>Room</th>
+        <th>Event</th>
+        <th>Start</th>
+      </tr>
+      <% @floors[0]["panels"].each do |p| %>
+        <tr>
+          <td><%= image_tag(MainHelper.panel_tag(p.room.name), size: "20x20")%></td>
+          <td><%= p.room.name %></td>
+          <td><%= p.name %></td>
+          <td><%= p.start %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

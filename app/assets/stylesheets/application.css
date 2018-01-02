@@ -106,7 +106,7 @@
 
 h1 {
 	color         : rgb(255, 155, 26);
-	font-size     : 100px;
+	font-size     : 50px;
 	padding-left  : 0px;
 	text-overflow : ellipsis;
 }
@@ -116,11 +116,9 @@ h3 {
 	width           : 100%;
 	font-size       : 225%;
 	text-decoration : none;
-	white-space     : nowrap;
 	text-overflow   : ellipsis;
 }
 
 #caro_item {
 	padding-left : 10px;
 }
-

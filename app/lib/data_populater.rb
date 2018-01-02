@@ -19,13 +19,13 @@ class DataPopulater
             end
 		end
 
-        Room.transaction do 
+        Room.transaction do
 		  @rooms.keys.each do |room|
 		  	next if Room.where(name: room).first.present?
           	temp = Room.new
             temp.name = room
             temp.save
-          end          
+          end
         end
 
         @panels_data.each do |panel|
@@ -40,6 +40,6 @@ class DataPopulater
 	end
 
     def self.get_json_of_panels
-        JSON.parse(open("https://super2017.uber.magfest.org/uber/schedule/panels_json").read)
+        JSON.parse(open("https://super2018.uber.magfest.org/uber/schedule/panels_json").read)
     end
 end

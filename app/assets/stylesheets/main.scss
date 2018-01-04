@@ -38,6 +38,10 @@
 .schedule-table{
 	width: 100%;
 	tr:nth-child(even) {background: rgba(194, 24, 91, 0.6)};
+	font-size: 18px;
+	td {
+		padding: 2px;
+	}
 }
 
 .schedule-table th{

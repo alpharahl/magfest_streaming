@@ -1,5 +1,7 @@
 class Room < ActiveRecord::Base
 	def get_current(time)
+		  #uber spits out est time
+			time = time + 5.hours
 	    Panel.where(room_id: self.id).each do |p|
 	        if p.start_unix < time.to_i and p.end_unix > time.to_i
 	        	return p
@@ -22,7 +24,7 @@ class Room < ActiveRecord::Base
 	def display_current(time)
 	    panel = get_current(time)
 	    if panel
-	        return "#{panel.name} <br>   #{panel.start[0..panel.start.index(" ")]} - #{panel.end[0..panel.end.index(" ")]}".html_safe	
+	        return "#{panel.name} <br>   #{panel.start[0..panel.start.index(" ")]} - #{panel.end[0..panel.end.index(" ")]}".html_safe
 	    else
 	    	next_panel = get_next(time)
 	    	if next_panel == nil

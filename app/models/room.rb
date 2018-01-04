@@ -1,7 +1,5 @@
 class Room < ActiveRecord::Base
 	def get_current(time)
-		  #uber spits out est time
-			time = time + 5.hours
 	    Panel.where(room_id: self.id).each do |p|
 	        if p.start_unix < time.to_i and p.end_unix > time.to_i
 	        	return p
@@ -11,9 +9,8 @@ class Room < ActiveRecord::Base
 	end
 
 	def get_next(time)
-		time = time + 5.hours
 		Panel.where(room_id: self.id).order(start_unix: :asc).each do |p|
-			return p if p.start_unix < time.to_i
+			return p if p.start_unix > time.to_i
 		end
 		# Need to do a special case check for first panel
 		p = Panel.where(room_id: self.id).order(start_unix: :asc).first

@@ -80,7 +80,7 @@ class MainController < ApplicationController
 		Room.all.each{|r| panels << r.get_next(Time.now)}
 		floors.each do |floor|
 			panels.each do |panel|
-				if floor["rooms"].include? panel.room.name
+				if panel and floor["rooms"].include? panel.room.name
 					floor["panels"] << panel
 					puts "yay"
 				end

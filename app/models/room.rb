@@ -9,6 +9,7 @@ class Room < ActiveRecord::Base
 	end
 
 	def get_next(time)
+		time = time + 5.hours
 		Panel.where(room_id: self.id).order(start_unix: :asc).each do |p|
 			return p if p.start_unix > time.to_i
 		end

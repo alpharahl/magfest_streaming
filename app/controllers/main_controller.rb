@@ -82,7 +82,6 @@ class MainController < ApplicationController
 			panels.each do |panel|
 				if panel and floor["rooms"].include? panel.room.name
 					floor["panels"] << panel
-					puts "yay"
 				end
 			end
 		end

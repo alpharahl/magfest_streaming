@@ -28,7 +28,7 @@
           <td><%= image_tag(MainHelper.panel_tag(p.room.name), size: "20x20")%></td>
           <td><%= p.room.name %></td>
           <td><%= p.name %></td>
-          <td><%= (Time.at(p.start.to_i) - 5.hours).strftime("at %I:%M%p")%></td>
+          <td><%= (Time.at(p.start_unix.to_i) - 5.hours).strftime("%I:%M%p")%></td>
         </tr>
       <% end %>
     </table>
@@ -45,7 +45,7 @@
           <td><%= image_tag(MainHelper.panel_tag(p.room.name), size: "20x20")%></td>
           <td><%= p.room.name %></td>
           <td><%= p.name %></td>
-          <td><%= (Time.at(p.start.to_i) - 5.hours).strftime("at %I:%M%p") %></td>
+          <td><%= (Time.at(p.start_unix.to_i) - 5.hours).strftime("%I:%M%p") %></td>
         </tr>
       <% end %>
     </table>
@@ -62,7 +62,7 @@
           <td><%= image_tag(MainHelper.panel_tag(p.room.name), size: "20x20")%></td>
           <td><%= p.room.name %></td>
           <td><%= p.name %></td>
-          <td><%= (Time.at(p.start.to_i) - 5.hours).strftime("at %I:%M%p") %></td>
+          <td><%= (Time.at(p.start_unix.to_i) - 5.hours).strftime("%I:%M%p") %></td>
         </tr>
       <% end %>
     </table>

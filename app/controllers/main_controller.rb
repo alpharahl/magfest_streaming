@@ -99,7 +99,10 @@ class MainController < ApplicationController
 			@pi = Pi.find(params[:pi_id])
 			@stream_room = Room.find(@pi.room_id)
 		else
-			@stream_room = Room.where(name: params[:room]).first || Room.where(name: "Panels 1").first
+			@stream_room = Room.where(name: params["room"])
+			unless @stream_room
+				@stream_room = Room.where(name: params[:room]).first || Room.where(name: "Panels 1").first
+			end
 		end
 		@panel = @stream_room.get_next(Time.now)
 	end

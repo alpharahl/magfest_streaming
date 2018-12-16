@@ -1,87 +1,18 @@
-
-<% local_data = {
-  "url"  => @disp_room.link,
-  "size"  => "25,25,1470,837"
-}.to_json.html_safe %>
-
-<!-- <script type="text/javascript">
-  //$.post( "http://127.0.0.1:8080", <%= local_data %> );
-  $.ajax({
-    url: 'http://127.0.0.1:8080',
-    type: 'post',
-    dataType: 'json',
-    data: '<%= local_data %>'
-  })
-
+<script type="text/javascript">
   setTimeout("refreshPage();", 60000);
   function refreshPage(){
     window.location = location.href;
   }
-</script> -->
-<%#"sourceURL":"http://warehouse.magfest.net:1935/testLoopStream/asdf/playlist.m3u8",%>
-<%# time = Time.local(2017,"jan",6,16,45,0) %>
-<% time = Time.now %>
-<div class="container, full_width_div" style="overflow:hidden">
-  <div class="row">
-    <div class="col-sm-9">
-      <!--<div style="width:100%;"><div id="playerElement" style="width:100%; height:0; padding:0 0 56.25% 0"></div></div>-->
-      <!-- <div class="container" id=video_location>Something truly terrible has happened ... Techops should fix it.</div> -->
-      <video src="<%= @disp_room.link %>" autoplay>
-        Sorry, your browser doesn't support embedded videos,
-        but don't worry, you can <a href="<%= @disp_room.link %>">download it</a>
-        and watch it with your favorite video player!
-      </video>
-    </div>
-    <div class="col-sm-2 text-center carousel slide fill side_bar" data-ride="carousel" data-interval="10000" id="schedule-pages">
-      <div class="carousel-inner text-left" role="listbox">
-        <div class="item active hfill">
-          <h1 class="text-center">Panels</h1>
-          <a href="<%= request.base_url%>/?room=Panels_1"><h3>Panels 1<%# @rooms[:panels_1].display_name(request.base_url) %></h3></a>
-          <div id="caro_item"><%= @rooms[:panels_1].display_current(time) %></div>
-          <a href="<%= request.base_url %>/?room=Panels_2&autoplay=true"><h3>Panels 2</h3></a>
-          <div id="caro_item"><%= @rooms[:panels_2].display_current(time) %></div>
-          <h3>Panels 3</h3>
-          <div id="caro_item"><%= @rooms[:panels_3].display_current(time) %></div>
-          <h3>Panels 4<%# @rooms[:panels_4].display_name(request.base_url) %></h3>
-          <div id="caro_item"><%= @rooms[:panels_4].display_current(time) %></div>
-        </div>
-        <div class="item hfill">
-          <h1 class="text-center">Panels</h1>
-          <h3>MAGES 1</h3>
-          <div id="caro_item"><%= @rooms[:mages_1].display_current(time) %></div>
-          <h3>MAGES 2</h3>
-          <div id="caro_item"><%= @rooms[:mages_2].display_current(time) %></div>
-          <h3>MAGES Forum</h3>
-          <div id="caro_item"><%= @rooms[:forum].display_current(time) %></div>
-          <h3>Arena</h3>
-          <div id="caro_item"><%= @rooms[:arena].display_current(time) %></div>
-        </div>
-        <div class="item hfill">
-          <h1 class="text-center">Music</h1>
-          <a href="<%= request.base_url %>/?room=Concerts&autoplay=true"><h3>Main Stage</h3></a>
-          <div id="caro_item"><%= @rooms[:concerts].display_current(time) %></div>
-          <a href="<%= request.base_url %>/?room=Mega_Man-athon_5&autoplay=true"><h3>Mega Man-athon 5</h3></a>
-          <div id="caro_item"><%= @rooms[:megaman].display_current(time) %></div>
-          <h3>Chipspace</h3>
-          <div id="caro_item"><%= @rooms[:chipspace].display_current(time) %></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</script>
 
-<br><br>
-<div class="container text-center full_width_div footer_bar" style="overflow:hidden">
-  <div class="row">
-    <div class="col-sm-9" id="stream_info">
-      <% unless @disp_room == nil  %>
-        <h3><span id="room_name"><%= "#{@disp_room.name}: "%></span><%= @disp_room.get_next(time).name %></h3>
-        <p><%= @disp_room.get_next(time).description %></p>
-      <% end %>
-    </div>
-    <div class="col-sm-2">
-      <div id="clock" class="clock"></div>
-      <div id="logo"><%= image_tag("m2017logo.png", height: "180px") %></div>
-    </div>
-  </div>
-</div>
+<% if params[:pi] %>
+  <script type="text/javascript">
+      //$.post( "http://127.0.0.1:8080", <%= local_data %> );
+      $.ajax({
+          url: 'http://127.0.0.1:8080',
+          type: 'post',
+          dataType: 'json',
+          data: '<%= local_data %>'
+      })
+  </script>
+<% end %>

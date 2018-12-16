@@ -1,0 +1,13 @@
+<script lang="text/javascript">
+    function refreshPage(){
+        window.location = location.href;
+    }
+    setTimeout("refreshPage();", 60000);
+</script>
+
+<div style="text-align: center; padding: 20px; height: 100vh">
+  <h1>Techops Internal Streaming System</h1>
+  <p>This machine has not yet been registered with the techops streaming system</p>
+  <br>
+  <p>Please register <%= request.remote_ip %></p>
+</div>

@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161230235726) do
+ActiveRecord::Schema.define(version: 20181216214952) do
+
+  create_table "devices", force: :cascade do |t|
+    t.string   "ip"
+    t.string   "location"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "internal_ip"
+  end
 
   create_table "panels", force: :cascade do |t|
     t.integer  "room_id"
@@ -27,9 +34,8 @@ ActiveRecord::Schema.define(version: 20161230235726) do
     t.date     "end_unix"
     t.string   "name"
     t.string   "panelists"
+    t.index ["room_id"], name: "index_panels_on_room_id"
   end
-
-  add_index "panels", ["room_id"], name: "index_panels_on_room_id"
 
   create_table "pis", force: :cascade do |t|
     t.string  "link"

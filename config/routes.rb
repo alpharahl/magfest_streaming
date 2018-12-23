@@ -9,6 +9,14 @@ Rails.application.routes.draw do
   get 'combined', to: 'main#combined'
   get 'stream', to: 'main#stream'
 
+  get 'admin/setup', to: 'devices#setup'
+  get 'admin/channels', to: 'devices#channels'
+  get 'api/admin/devices', to: 'devices#setup_list'
+  get 'api/admin/populate', to: 'rooms#populate'
+  get 'admin/events', to: 'rooms#streaming'
+
+  resources :devices, only: [:destroy, :update, :index]
+
   get 'display/:id', controller: :main, action: :welcome
   resources :rooms
 end

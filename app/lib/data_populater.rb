@@ -40,6 +40,6 @@ class DataPopulater
 	end
 
     def self.get_json_of_panels
-        JSON.parse(open("https://super2018.uber.magfest.org/uber/schedule/panels_json").read)
+        JSON.parse(open(ENV['EVENT_LIST']).read)
     end
 end

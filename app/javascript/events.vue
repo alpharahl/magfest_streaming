@@ -1,7 +1,9 @@
 <template>
   <div>
     <Header :admin="true"/>
-
+    <v-container>
+      <EventStream v-for="stream in streams" :stream="stream"/>
+    </v-container>
     <Footer/>
   </div>
 </template>
@@ -9,8 +11,7 @@
 <script>
   import Header from './components/Header'
   import Footer from './components/Footer'
-  import Devices from './components/Devices'
-  import DeviceHeader from './components/DeviceHeader'
+  import EventStream from './components/EventStream'
   import axios from 'axios'
 
   export default {
@@ -19,34 +20,21 @@
     components: {
       Header,
       Footer,
-      Devices,
-      DeviceHeader
+      EventStream
     },
 
     data () {
       return {
-        devices: [],
-        headers: [
-          {
-            text: 'ID',
-            align: 'right',
-            value: 'id'
-          },
-          {
-            text: 'Internal Ip',
-            value: 'internal_ip',
-            align: 'right'
-          },
-          {
-            text: 'Channel',
-            value: 'channel',
-            align: 'right'
-          }
-        ],
+        streams: []
       }
     },
 
     mounted () {
+      axios
+        .get('/api/admin/events')
+        .then(response => {
+          this.streams = response.data
+        })
     }
   }
 </script>

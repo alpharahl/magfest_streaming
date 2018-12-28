@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181223012805) do
+ActiveRecord::Schema.define(version: 20181223220107) do
 
   create_table "devices", force: :cascade do |t|
     t.string   "ip"
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 20181223012805) do
     t.datetime "updated_at", null: false
     t.string   "link"
     t.boolean  "streaming"
+  end
+
+  create_table "streams", force: :cascade do |t|
+    t.integer  "room_id"
+    t.string   "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean  "streaming"
+    t.index ["room_id"], name: "index_streams_on_room_id"
   end
 
 end

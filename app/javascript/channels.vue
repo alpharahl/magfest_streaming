@@ -1,8 +1,10 @@
 <template>
   <div>
     <Header :admin="true"/>
-    <DeviceHeader/>
-    <Devices v-for="device in devices" :device="device"/>
+    <v-container>
+      <DeviceHeader/>
+      <Devices v-for="device in devices" :device="device"/>
+    </v-container>
     <Footer/>
   </div>
 </template>

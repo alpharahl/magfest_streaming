@@ -8,7 +8,7 @@
       Location:
       <v-text-field solo v-model="device.location"/>
       Channel:
-      <v-text-field solo v-model="device.channel"/>
+      <Channel/>
     </v-card>
     <div id="buttons">
 
@@ -24,6 +24,7 @@
 
 <script>
   import axios from 'axios'
+  import Channel from './channel'
 
   export default {
     name: "DeviceSetupCard",
@@ -35,6 +36,10 @@
     },
 
     props: ['device'],
+
+    components: {
+      Channel
+    },
 
     methods: {
       deleteDevice(){

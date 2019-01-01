@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'admin/events', to: 'rooms#streaming'
   get 'api/admin/events', to: 'rooms#index'
   patch 'api/rooms/:id', to: 'rooms#update_room'
+  get '/api/rooms/streamable', to: 'rooms#streamable'
 
   resources :devices, only: [:destroy, :update, :index]
 

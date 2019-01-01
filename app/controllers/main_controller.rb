@@ -4,63 +4,7 @@ class MainController < ApplicationController
 	end
 
 	def schedule
-		floors = []
-		floors[0] = {
-			"rooms" => [
-				"Autographs Red",
-				"Autographs Blue",
-				"Console",
-				"Arcade"
-			],
-			"panels" => []
-		}
-		floors[1] = {
-			"rooms" => [],
-			"panels" => []
-		}
-		floors[2] = {
-			"rooms" => [
-				"Panels 1",
-				"Panels 2",
-				"Panels 3",
-				"Panels 4",
-				"Forge",
-				"Escape Room",
-				"LAN 1",
-				"LAN 2",
-				"The Soapbox",
-				"Mages 1",
-				"Mages 2",
-				"Forum",
-				"Chipspace",
-				"Concerts",
-				"LAN Theater",
-				"Jam Clinic",
-				"Arena",
-				"Games on Film",
-				"Mega Man-athon 6"
-			],
-			"panels" => []
-		}
-		floors[3] = {
-			"rooms" => [
-				"Tabletop Discussions",
-				"Tabletop CCG",
-				"Tabletop Indie Showcase",
-				"Tabletop"
-			],
-			"panels" => []
-		}
-		panels = []
-		Room.all.each{|r| panels << r.get_next(Time.now)}
-		floors.each do |floor|
-			panels.each do |panel|
-				if panel and floor["rooms"].include? panel.room.name
-					floor["panels"] << panel
-				end
-			end
-		end
-		@floors = floors
+		
 	end
 
 	def stream

@@ -1,5 +1,5 @@
 <template>
-  <v-card >
+  <v-card>
     <v-layout flex>
       <v-flex xs2>
         {{ device.id }}
@@ -11,7 +11,7 @@
         {{ device.internal_ip }}
       </v-flex>
       <v-flex xs3>
-        {{ device.channel }}
+        <Channel/>
       </v-flex>
       <v-flex xs1>
         <v-btn
@@ -31,17 +31,12 @@
 
 <script>
   import axios from 'axios'
+  import Channel from './channel'
 
   export default {
     name: "Devices",
 
     props: ['device'],
-
-    data () {
-      return {
-        channels: []
-      }
-    },
 
     methods: {
       delete_device() {
@@ -51,6 +46,10 @@
 
     mounted () {
 
+    },
+
+    components: {
+      Channel
     }
   }
 </script>

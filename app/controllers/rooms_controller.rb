@@ -24,4 +24,12 @@ class RoomsController < ApplicationController
 
   def streaming
   end
+
+  def streamable
+    render json: Room.where(streaming: true).select(:id, :name).to_json
+  end
+
+  def channel
+    render json: Room.find(params[:id]).select(:channel).to_json
+  end
 end

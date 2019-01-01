@@ -17,7 +17,7 @@ config.webpacker.check_yarn_integrity = false
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  config.serve_static_assets = true
+  config.public_file_server.enabled = true
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.

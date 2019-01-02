@@ -1,10 +1,10 @@
 <template>
   <div id="event" :class="{altColor: index % 2 == 0}">
     <v-layout flex>
-      <v-flex xs8>
+      <v-flex xs7>
         {{ name }}
       </v-flex>
-      <v-flex xs2>
+      <v-flex xs3>
         {{ magLocation }}
       </v-flex>
       <v-flex xs2 id="time">

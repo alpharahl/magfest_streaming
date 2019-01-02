@@ -81,6 +81,6 @@
 }
 
 .altColor{
-  background-color: #144473;
+  background-color: rgba(15, 32, 65, 0.96);
 }
 </style>

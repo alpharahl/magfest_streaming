@@ -12,7 +12,12 @@ import 'vuetify/dist/vuetify.min.css'
 
 const store = new Vuex.Store({
   state: {
-    events: []
+    events: [],
+    riverview: [],
+    atrium: [],
+    lobby: [],
+    ballroom: [],
+    harbor: []
   }
 })
 

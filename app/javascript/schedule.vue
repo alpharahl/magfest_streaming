@@ -2,6 +2,7 @@
   <v-layout flex class="layout">
     <v-flex xs5>
       <img src="./assets/gaylord_map_-_full.png" class="map"/>
+      <img src=""/>
     </v-flex>
     <v-flex xs7>
       <List/>
@@ -26,19 +27,38 @@
     },
 
     methods: {
-      iterate(){
-        var first = this.$store.state.events.shift()
-        this.$store.state.events.push(first)
-        setTimeout( _ => this.iterate(), 5000)
-      }
     },
 
     mounted () {
       axios
         .get('/api/rooms/current')
         .then(response => {
-          this.$store.state.events = response.data
-          setTimeout( _ => this.iterate(), 5000)
+          for (var n of response.data){
+            if(n.location.includes('Tabletop') == true || n.location.includes('MITS') == true ){
+              this.$store.state.riverview.push(n)
+            } else if(
+              n.location.includes('Jamspace') ||
+              n.location.includes('Autographs') ||
+              n.location.includes('Robotics') ||
+              n.location.includes('Arcade') ||
+              n.location.includes('MIVS') ||
+              n.location.includes('Consoles')
+            ) {
+              this.$store.state.atrium.push(n)
+            } else if (
+              n.location.includes('Woodrow') ||
+              n.location.includes('Chesapeake') ||
+              n.location.includes('Maryland') ||
+              n.location.includes('Potomac') ||
+              n.location.includes('Cherry')
+            ) {
+              this.$store.state.ballroom.push(n)
+            } else if (
+              n.location.includes('Harbor')
+            ) {
+              this.$store.state.harbor.push(n)
+            }
+          }
         })
     },
 

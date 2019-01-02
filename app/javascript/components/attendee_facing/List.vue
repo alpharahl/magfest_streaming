@@ -1,20 +1,20 @@
 <template>
   <div id="padding">
-    <Event
-      v-for="event in $store.state.events"
-      :event="event"
-    />
+    <Floor floorName="National Harbor Level" :events="$store.state.harbor"/>
+    <Floor floorName="Ballroom Level" :events="$store.state.ballroom"/>
+    <Floor floorName="Atrium Level" :events="$store.state.atrium"/>
+    <Floor floorName="Riverview Ballroom" :events="$store.state.riverview"/>
   </div>
 </template>
 
 <script>
-  import Event from './Event'
+  import Floor from './Floor'
 
   export default {
     name: "List",
 
     components: {
-      Event
+      Floor
     }
   }
 </script>

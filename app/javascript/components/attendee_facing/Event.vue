@@ -55,7 +55,6 @@
   padding-bottom: 3px;
   padding-left: 3px;
   padding-right: 3px;
-  font-size: larger;
 }
 
 #time{

@@ -2,7 +2,6 @@
   <v-layout flex class="layout">
     <v-flex xs5>
       <img src="./assets/gaylord_map_-_full.png" class="map"/>
-      <img src=""/>
     </v-flex>
     <v-flex xs7>
       <List/>
@@ -79,5 +78,12 @@
     height: 100vh;
     background-color: black;
     color: lightblue;
+  }
+
+  #welcome{
+    font-size: 20px;
+    color: #4fc3f7;
+    text-align: center;
+    width: 100%;
   }
 </style>

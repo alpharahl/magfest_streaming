@@ -5,10 +5,10 @@
   </v-container>
 
   <v-layout flex class="layout" v-else>
-    <v-flex xs6>
+    <v-flex xs5>
       <img src="./assets/gaylord_map_-_full.png" class="map"/>
     </v-flex>
-    <v-flex xs6>
+    <v-flex xs7>
       <List/>
     </v-flex>
   </v-layout>
@@ -74,13 +74,12 @@
 
 <style scoped>
 .map{
-  width: 100%;
-  height: auto;
+  height: 100vh;
   padding: 10px;
 }
 
   .layout{
-    height: 98vh;
+    height: 100vh;
     background-color: black;
     color: lightblue;
   }

@@ -3,7 +3,7 @@ class SetupController < ApplicationController
     device = Device.where(id: params[:id]).first
     if device && !device.location.nil?
 
-      redirect_to action: :welcome, controller: :main, id: params[:id], pi: params[:pi]
+      redirect_to action: :schedule, controller: :main, id: params[:id], pi: params[:pi]
     elsif device
 
     else

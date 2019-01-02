@@ -59,28 +59,12 @@
   padding-bottom: 3px;
   padding-left: 3px;
   padding-right: 3px;
+  color: white;
 }
 
 #time{
   top: 0px;
   right: 20px;
   text-align: right;
-}
-
-#name{
-  color: lightblue;
-  font-size: 24px;
-  width: 70%;
-  overflow:hidden;
-}
-
-#color{
-  background-color: rgb(255,157,157);
-  width: 20px;
-  height: 100$;
-}
-
-.altColor{
-  background-color: rgba(15, 32, 65, 0.96);
 }
 </style>

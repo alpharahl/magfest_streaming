@@ -80,7 +80,7 @@
 }
 
   .layout{
-    height: 100vh;
+    height: 98vh;
     background-color: black;
     color: lightblue;
   }

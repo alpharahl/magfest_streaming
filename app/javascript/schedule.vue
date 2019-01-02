@@ -5,10 +5,10 @@
   </v-container>
 
   <v-layout flex class="layout" v-else>
-    <v-flex xs5>
+    <v-flex xs6>
       <img src="./assets/gaylord_map_-_full.png" class="map"/>
     </v-flex>
-    <v-flex xs7>
+    <v-flex xs6>
       <List/>
     </v-flex>
   </v-layout>

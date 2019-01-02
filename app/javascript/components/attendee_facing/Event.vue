@@ -81,6 +81,6 @@
 }
 
 .altColor{
-  background-color: #18609b;
+  background-color: #144473;
 }
 </style>

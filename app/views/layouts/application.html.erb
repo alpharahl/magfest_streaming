@@ -30,12 +30,6 @@ function checkTime(i) {
 </script>
 </head>
 <body onload="startTime()">
-  <script type="text/javascript">
-    setTimeout("refreshPage();", 60000);
-    function refreshPage(){
-      window.location = location.href;
-    }
-  </script>
 
   <div class="full_page">
     <%= yield %>

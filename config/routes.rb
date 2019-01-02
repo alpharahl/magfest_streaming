@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  root 'setup#index'
+  get 'isp', to: 'setup#index'
   get 'schedule', to: 'main#schedule'
   get 'combined', to: 'main#combined'
   get 'stream', to: 'main#stream'

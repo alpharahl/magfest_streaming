@@ -42,6 +42,10 @@
           mL = 'Mega Man-athon'
         } else if (mL.includes('Rock Island')){
           mL = 'Rock Island'
+        } else if (mL.includes('D&D')){
+          mL = 'D*D Adventurers'
+        } else if (mL.includes('Indie Arcade')){
+          mL = 'Indie Arcade'
         }
         return mL
       }

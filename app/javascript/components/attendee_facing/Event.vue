@@ -68,7 +68,7 @@
   text-align: right;
 }
 
-..altColor{
+.altColor{
   background-color: rgba(15, 32, 65, 0.96);
 }
 </style>

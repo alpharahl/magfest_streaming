@@ -26,7 +26,7 @@
 
     data () {
       return {
-        vertical: true
+        vertical: false
       }
     },
 

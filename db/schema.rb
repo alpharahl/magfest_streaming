@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181223220107) do
+ActiveRecord::Schema.define(version: 20190102163905) do
 
   create_table "devices", force: :cascade do |t|
     t.string   "ip"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20181223220107) do
     t.datetime "updated_at",  null: false
     t.string   "internal_ip"
     t.string   "channel"
+    t.boolean  "vertical"
   end
 
   create_table "panels", force: :cascade do |t|

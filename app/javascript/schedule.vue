@@ -1,5 +1,10 @@
 <template>
-  <v-layout flex class="layout">
+  <v-container fluid v-if="vertical" class="vertLayout">
+    <img src="./assets/gaylord_map_-_full.png" class="map"/>
+    <List/>
+  </v-container>
+
+  <v-layout flex class="layout" v-else>
     <v-flex xs5>
       <img src="./assets/gaylord_map_-_full.png" class="map"/>
     </v-flex>
@@ -21,7 +26,7 @@
 
     data () {
       return {
-
+        vertical: true
       }
     },
 
@@ -80,6 +85,11 @@
     color: lightblue;
   }
 
+  .vertLayout{
+    width: 100%;
+    background-color: black;
+    color: lightblue;
+  }
   #welcome{
     font-size: 20px;
     color: #4fc3f7;

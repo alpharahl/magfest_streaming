@@ -43,7 +43,7 @@
         } else if (mL.includes('Rock Island')){
           mL = 'Rock Island'
         } else if (mL.includes('D&D')){
-          mL = 'D*D Adventurers'
+          mL = 'D&D Adventurers'
         } else if (mL.includes('Indie Arcade')){
           mL = 'Indie Arcade'
         }
@@ -81,7 +81,6 @@
 }
 
 .altColor{
-  background-color: #4fc3f7;
-  color: black;
+  background-color: #18609b;
 }
 </style>

@@ -9,6 +9,7 @@
       <v-text-field solo v-model="device.location"/>
       Channel:
       <Channel/>
+      Vertical: <v-switch v-model="device.vertical" dark label="Vertical"></v-switch>
     </v-card>
     <div id="buttons">
 
@@ -57,7 +58,8 @@
             {
               internal_ip: this.device.internal_ip,
               location: this.device.location,
-              channel: this.device.channel
+              channel: this.device.channel,
+              vertical: this.device.vertical
             }
           )
       }

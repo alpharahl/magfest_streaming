@@ -38,5 +38,6 @@
 <style scoped>
 #padding{
   padding: 15px;
+  overflow: hidden;
 }
 </style>

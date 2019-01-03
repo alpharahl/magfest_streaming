@@ -1,17 +1,20 @@
 <template>
-  <v-container fluid v-if="vertical" class="vertLayout">
-    <img src="./assets/gaylord_map_-_full.png" class="map"/>
-    <List/>
-  </v-container>
+  <div id="wrapper">
 
-  <v-layout flex class="layout" v-else>
-    <v-flex xs6>
+    <v-container fluid v-if="vertical" class="vertLayout">
       <img src="./assets/gaylord_map_-_full.png" class="map"/>
-    </v-flex>
-    <v-flex xs6>
       <List/>
-    </v-flex>
-  </v-layout>
+    </v-container>
+
+    <v-layout flex class="layout" v-else>
+      <v-flex xs6>
+        <img src="./assets/gaylord_map_-_full.png" class="map"/>
+      </v-flex>
+      <v-flex xs6>
+        <List/>
+      </v-flex>
+    </v-layout>
+  </div>
 </template>
 
 <script>
@@ -92,7 +95,6 @@
     height: 100vh;
     background-color: black;
     color: lightblue;
-    overflow: hidden;
   }
 
   .vertLayout{
@@ -101,9 +103,9 @@
     color: lightblue;
   }
 
-  ::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
+  #wrapper{
+    height: 100%;
+    overflow: hidden;
   }
 
   #welcome{

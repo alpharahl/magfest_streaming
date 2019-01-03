@@ -38,6 +38,8 @@
 <style scoped>
 #padding{
   padding: 15px;
-  overflow-y: hidden;
+  overflow: hidden;
+
 }
+
 </style>

@@ -107,6 +107,9 @@
     height: 100%;
     overflow: hidden;
   }
+  ::-webkit-scrollbar{
+    display: none;
+  }
 
   #welcome{
     font-size: 20px;

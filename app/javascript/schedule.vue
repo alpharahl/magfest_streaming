@@ -106,10 +106,6 @@
   #wrapper{
     overflow: scroll;
   }
-  ::-webkit-scrollbar{
-    width: 0px;
-    background: transparent;
-  }
 
   #welcome{
     font-size: 20px;

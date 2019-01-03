@@ -104,7 +104,6 @@
   }
 
   #wrapper{
-    height: 100%;
     overflow: scroll;
   }
   ::-webkit-scrollbar{

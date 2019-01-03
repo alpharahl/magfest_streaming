@@ -60,7 +60,7 @@
         }
         setTimeout(function(){
           this.getData()
-        })
+        }, 60000)
       },
 
       getData(){
@@ -100,6 +100,12 @@
     background-color: black;
     color: lightblue;
   }
+
+  ::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+  }
+
   #welcome{
     font-size: 20px;
     color: #4fc3f7;

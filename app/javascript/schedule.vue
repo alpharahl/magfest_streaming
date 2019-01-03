@@ -105,10 +105,11 @@
 
   #wrapper{
     height: 100vh;
-    overflow: hidden;
+    overflow: scroll;
   }
   ::-webkit-scrollbar{
-    display: none;
+    width: 0px;
+    background: transparent;
   }
 
   #welcome{

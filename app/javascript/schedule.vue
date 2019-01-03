@@ -35,6 +35,11 @@
 
     methods: {
       loadData(data){
+        console.log('loading data')
+        this.$store.state.riverview = []
+        this.$store.state.ballroom = []
+        this.$store.state.atrium = []
+        this.$store.state.harbor = []
         for (var n of data){
           if(n.location.includes('Tabletop') == true || n.location.includes('MITS') == true ){
             this.$store.state.riverview.push(n)
@@ -63,7 +68,7 @@
         }
         setTimeout(function(){
           this.getData()
-        }, 60000)
+        }.bind(this), 60000)
       },
 
       getData(){

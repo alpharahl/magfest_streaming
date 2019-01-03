@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190102163905) do
+ActiveRecord::Schema.define(version: 20190103065338) do
+
+  create_table "cells", force: :cascade do |t|
+    t.integer  "x"
+    t.integer  "y"
+    t.string   "type"
+    t.boolean  "walkable"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "data", force: :cascade do |t|
+    t.string   "blob"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "devices", force: :cascade do |t|
     t.string   "ip"

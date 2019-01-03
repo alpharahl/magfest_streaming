@@ -14,10 +14,14 @@ Rails.application.routes.draw do
   get 'api/admin/devices', to: 'devices#setup_list'
   get 'api/admin/populate', to: 'rooms#populate'
   get 'admin/events', to: 'rooms#streaming'
+  get 'admin/map', to: 'map#admin'
   get 'api/admin/events', to: 'rooms#index'
   patch 'api/rooms/:id', to: 'rooms#update_room'
   get 'api/rooms/current', to: 'rooms#current'
   get '/api/rooms/streamable', to: 'rooms#streamable'
+
+  get 'api/foo', to: 'foo#index'
+  post 'api/bar', to: 'bar#create'
 
   resources :devices, only: [:destroy, :update, :index]
 

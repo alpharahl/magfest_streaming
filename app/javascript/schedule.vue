@@ -104,7 +104,7 @@
   }
 
   #wrapper{
-    overflow: scroll;
+    overflow: hidden;
   }
 
   #welcome{

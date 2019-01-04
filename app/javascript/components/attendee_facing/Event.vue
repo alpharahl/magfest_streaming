@@ -22,8 +22,8 @@
 
     computed: {
       name () {
-        if (this.event.name.length > 80){
-          return (this.event.name.substring(0, 77) + '...')
+        if (this.event.name.length > 60){
+          return (this.event.name.substring(0, 57) + '...')
         } else {
           return this.event.name
         }
